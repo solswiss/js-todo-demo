@@ -18,10 +18,16 @@ const removeSpecialChars = (str) => {
 }
 
 const addOrUpdateTask = () => {
-   if(!titleInput.value.trim()){
+   if(!titleInput.value.trim()) {
     alert("Please provide a title");
     return;
   }
+  
+  if (!dateInput.value.trim()) {
+    alert("Please provide a date")
+    return;
+  }
+  
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
   const taskObj = {
     id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
@@ -37,8 +43,8 @@ const addOrUpdateTask = () => {
   }
 
   sessionStorage.setItem("data", JSON.stringify(taskData));
-  updateTaskContainer()
-  reset()
+  updateTaskContainer();
+  reset();
 };
 
 const updateTaskContainer = () => {
@@ -48,11 +54,11 @@ const updateTaskContainer = () => {
     ({ id, title, date, description }) => {
         (tasksContainer.innerHTML += `
         <div class="task" id="${id}">
-          <p><strong>Title:</strong> ${title}</p>
-          <p><strong>Date:</strong> ${date}</p>
-          <p><strong>Description:</strong> ${description}</p>
-          <button onclick="editTask(this)" type="button" class="btn">Edit</button>
-          <button onclick="deleteTask(this)" type="button" class="btn">Delete</button> 
+          <h2>${title}</h2>
+          <p class="date">${date}</p>
+          <p>${description}</p>
+          <button onclick="editTask(this)" type="button" class="mod-task-btn">Edit</button>
+          <button onclick="deleteTask(this)" type="button" class="mod-task-btn">Delete</button> 
         </div>
       `)
     }
