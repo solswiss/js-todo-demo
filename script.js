@@ -54,9 +54,9 @@ const updateTaskContainer = () => {
     ({ id, title, date, description }) => {
         (tasksContainer.innerHTML += `
         <div class="task" id="${id}">
-          <h2>${title}</h2>
+          <h2 class="wrap title">${title}</h2>
           <p class="date">${date}</p>
-          <p>${description}</p>
+          <p class="wrap desc">${description}</p>
           <button onclick="editTask(this)" type="button" class="mod-task-btn">Edit</button>
           <button onclick="deleteTask(this)" type="button" class="mod-task-btn">Delete</button> 
         </div>
