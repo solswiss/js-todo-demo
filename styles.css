@@ -8,6 +8,7 @@
   --ghost: ghostwhite;
   --grey: lightslategray;
   --zero: #222;
+  --form-bg: ghostwhite;
   --display: "ZCOOL QingKe HuangYou";
   --sans: "Public Sans";
   --flair: "DM Mono";
@@ -100,12 +101,6 @@ button {
   justify-self: center;
 }
 
-.close-task-form-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
 .close-icon {
   width: 20px;
   height: 20px;
@@ -168,6 +163,7 @@ input {
 
 input:focus,
 textarea:focus {
+  outline: none;
   color: var(--zero);
 }
 
@@ -225,8 +221,9 @@ textarea {
 }
 
 .date {
+  float: right;
   font-size: 1rem;
-  color: var(--grey);
+  color: var(--alpha);
 }
 
 .wrap {
@@ -239,9 +236,10 @@ textarea {
   font-size: 1rem;
   background: none;
   border: none;
-  border-radius: none;
   font-size: 0.8rem;
   margin-top: 10px;
+  padding: 5px;
+  width: 30px;
 }
 
 .mod-task-btn:hover,
