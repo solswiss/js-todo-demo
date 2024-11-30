@@ -6,22 +6,19 @@
   <title>To-Do App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Gaegu&family=Golos+Text:wght@400..900&family=Stick&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
-    <h1>To-Do App</h1>
+    <h1 class="site_title">To-Do App</h1>
     <div class="todo-app">
-      <button id="open-task-form-btn" class="btn large-btn">
-        Add New Task
-      </button>
+      <button id="open-task-form-btn" class="btn large-btn"><i class="fa-solid fa-plus"></i></button>
       <form class="task-form hidden" id="task-form">
         <div class="task-form-header">
-          <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close">
-            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
-          </button>
+          <button id="add-or-update-task-btn" class="btn large-btn" type="submit"><i class="fa-solid fa-check"></i> </button>
+          <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="task-form-body">
           <label class="task-form-label" for="title-input">Title</label>
@@ -30,11 +27,6 @@
           <input type="date" class="form-control" id="date-input" value="" />
           <label class="task-form-label" for="description-input">Description</label>
           <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
-        </div>
-        <div class="task-form-footer">
-          <button id="add-or-update-task-btn" class="btn large-btn" type="submit">
-            Add Task
-          </button>
         </div>
       </form>
       <dialog id="confirm-close-dialog">
