@@ -1,18 +1,16 @@
 :root {
-  --alpha: springgreen;
-  --bravo: limegreen;
-  --charlie: lightgreen;
-  --delta: lightcyan;
-  --valid: dodgerblue;
-  --invalid: red;
+  --alpha: #22EFAF;
+  --bravo: #FFA099;
+  --charlie: #EF80AF;
+  --delta: #FFECCF;
+  --valid: #99FFAE;
+  --invalid: #F09;
   --ghost: ghostwhite;
   --grey: lightslategray;
   --zero: #222;
-  --form-bg: #fff;
-  --display: "Freckle Face";
-  --sans: "Golos Text";
-  --hand: "Gaegu";
-  --special: "Stick";
+  --display: "ZCOOL QingKe HuangYou";
+  --sans: "Public Sans";
+  --flair: "DM Mono";
 }
 
 *,
@@ -30,8 +28,8 @@ html {
 }
 
 body {
-  background-color: var(--ghost);
-  background: linear-gradient(var(--delta), var(--ghost));
+  background-color: var(--delta);
+  background: linear-gradient(var(--bravo), var(--delta));
   background-repeat: no-repeat;
   margin: 2em;
 }
@@ -50,17 +48,20 @@ h1 {
   margin: 20px 0 40px 0;
 }
 
+.site_title {
+  margin: 50px auto;
+}
+
 .todo-app {
   background-color: var(--form-bg);
-  width: 300px;
-  height: 450px;
+  width: 450px;
+  height: min(560px, 70vh);
   border: 5px solid var(--form-bg);
   border-radius: 8px;
-  padding: 15px;
+  padding: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 input,
@@ -79,23 +80,17 @@ button {
   min-width: 50px;
   min-height: 30px;
   font-family: var(--sans);
+  font-size: 1rem;
   color: var(--ghost);
-  text-shadow: -2px -1px 0 var(--bravo);
   font-weight: bold;
-  background: var(--charlie);
-  border: 2px solid var(--charlie);
-  border-radius: 5px;
+  background: var(--alpha);
+  border: none;
 }
 
 .btn:hover,
 .btn:active,
 .btn:focus {
-  &:not(.close-task-form-btn){
-    color: var(--ghost);
-    text-shadow: -2px -1px 0 var(--bravo);
-    background: var(--alpha);
-    border: 2px solid var(--alpha);
-   }
+  background: var(--zero);
 }
 
 .large-btn {
@@ -125,8 +120,8 @@ button {
   background-color: var(--form-bg);
   border-radius: 5px;
   padding: 15px;
-  width: 550px;
-  height: 550px;
+  width: 450px;
+  height: min(560px, 70vh);
   flex-direction: column;
   justify-content: space-between;
   overflow: auto;
@@ -164,23 +159,29 @@ button {
 
 input {
   background: var(--form-bg);
-  color: var(--zero);
+  color: var(--bravo);
   border: none;
-  border-bottom: 2px solid var(--charlie);
-  width: 350px;
-  max-width: 60vw;
+  border-bottom: 1px solid var(--delta);
+  width: 100%;
+  max-width: 100%;
 }
 
-input:focus {
-  outline: none;
-  border-bottom: 2px solid var(--alpha);
+input:focus,
+textarea:focus {
+  color: var(--zero);
 }
 
 textarea {
-  font-family: var(--sans);
+  font-family: var(--flair);
   font-size: 1rem;
-  border: 2px solid var(--charlie);
+  color: var(--bravo);
+  border: 1px solid var(--delta);
   outline: none;
+}
+
+#open-task-form-btn,
+#add-or-update-task-btn {
+  align-self: flex-end;
 }
 
 #title-input,
@@ -218,9 +219,9 @@ textarea {
 
 .task {
   font-family: var(--sans);
-  padding: 1rem 0;
+  padding: 10px 0;
   margin-top: 5px 0;
-  border-bottom: 3px dotted var(--grey);
+  border-bottom: 1px solid var(--alpha);
 }
 
 .date {
@@ -228,11 +229,17 @@ textarea {
   color: var(--grey);
 }
 
+.wrap {
+  width: 100%;
+  word-break: break-word;
+}
+
 .mod-task-btn {
-  color: var(--zero);
-  background: var(--form-bg);
-  border: 2px solid var(--charlie);
-  border-radius: 5px;
+  color: var(--charlie);
+  font-size: 1rem;
+  background: none;
+  border: none;
+  border-radius: none;
   font-size: 0.8rem;
   margin-top: 10px;
 }
@@ -240,7 +247,7 @@ textarea {
 .mod-task-btn:hover,
 .mod-task-btn:active,
 .mod-task-btn:focus {
-  background: var(--charlie);
+  background: var(--zero);
 }
 
 .hidden {
@@ -248,12 +255,6 @@ textarea {
 }
 
 @media (min-width: 576px) {
-  .todo-app,
-  .task-form {
-    width: 550px;
-    height: 550px;
-  }
-
   .task-form-label {
     font-size: 1.5rem;
   }
