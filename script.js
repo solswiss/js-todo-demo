@@ -57,8 +57,8 @@ const updateTaskContainer = () => {
           <h2 class="wrap title">${title}</h2>
           <p class="date">${date}</p>
           <p class="wrap desc">${description}</p>
-          <button onclick="editTask(this)" type="button" class="mod-task-btn">Edit</button>
-          <button onclick="deleteTask(this)" type="button" class="mod-task-btn">Delete</button> 
+          <button onclick="editTask(this)" type="button" class="mod-task-btn"><i class="fa-solid fa-pen"></i></button>
+          <button onclick="deleteTask(this)" type="button" class="mod-task-btn"><i class="fa-solid fa-trash"></i></button> 
         </div>
       `)
     }
