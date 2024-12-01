@@ -91,7 +91,7 @@ const editTask = (btn) => {
   dateInput.value = currentTask.date;
   descInput.value = currentTask.description;
 
-  addOrUpdateTaskBtn.innerText = "Update Task";
+  addOrUpdateTaskBtn.innerHTML = "<i class="fa-solid fa-check"></i>";
 
   taskForm.classList.toggle("hidden");  
 }
