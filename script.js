@@ -91,13 +91,13 @@ const editTask = (btn) => {
   dateInput.value = currentTask.date;
   descInput.value = currentTask.description;
 
-  addOrUpdateTaskBtn.innerHTML = "<i class="fa-solid fa-check"></i>";
+  addOrUpdateTaskBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
 
   taskForm.classList.toggle("hidden");  
 }
 
 const reset = () => {
-  addOrUpdateTaskBtn.innerHTML = "<i class="fa-solid fa-plus"></i>";
+  addOrUpdateTaskBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
   titleInput.value = "";
   dateInput.value = "";
   descInput.value = "";
