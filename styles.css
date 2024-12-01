@@ -12,6 +12,8 @@
   --display: "ZCOOL QingKe HuangYou";
   --sans: "Public Sans";
   --flair: "DM Mono";
+
+  --app-width: 450px;
 }
 
 *,
@@ -55,7 +57,7 @@ h1 {
 
 .todo-app {
   background-color: var(--form-bg);
-  width: 450px;
+  width: var(--app-width);
   height: min(560px, 70vh);
   border: 5px solid var(--form-bg);
   border-radius: 8px;
@@ -114,7 +116,7 @@ button {
   background-color: var(--form-bg);
   border-radius: 5px;
   padding: 15px;
-  width: 450px;
+  width: var(--app-width);
   height: min(560px, 70vh);
   flex-direction: column;
   justify-content: start;
@@ -251,7 +253,11 @@ textarea {
   display: none;
 }
 
-@media (min-width: 576px) {
+@media only screen and (max-width: 600px) {
+  :root {
+    --app-width: max(90vw, 310px)
+  }
+  
   .task-form-label {
     font-size: 1.5rem;
   }
